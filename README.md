@@ -1,1 +1,1 @@
-- Miniproject 1 [Lists: Dynamic, SinglyLinked, DoublyLinked](https://github.com/natomkul/Struktury-Danych/tree/natomkul-miniprojekt-1)
+- Miniproject 1 [Listy](https://github.com/natomkul/Struktury-Danych/tree/natomkul-miniprojekt-1)
