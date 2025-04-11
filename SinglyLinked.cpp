@@ -9,6 +9,7 @@ SinglyLinked::~SinglyLinked(){
 	SNode* v = get_head();
 	while (v != NULL) {
 		deleteFront();
+		v = get_head();
 	}
 }
 
