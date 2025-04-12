@@ -1,13 +1,13 @@
 ﻿#include "SinglyLinked.h"
 
 
-SinglyLinked::SinglyLinked():head(NULL){
+SinglyLinked::SinglyLinked():head(nullptr){
 	size = 0;
 }
 
 SinglyLinked::~SinglyLinked(){
 	SNode* v = get_head();
-	while (v != NULL) {
+	while (v != nullptr) {
 		deleteFront();
 		v = get_head();
 	}
@@ -19,7 +19,7 @@ SNode* SinglyLinked::get_head(){
 
 void SinglyLinked::display() {
 	SNode* v = get_head();
-	while (v != NULL) {
+	while (v != nullptr) {
 		cout << v ->data << " -> ";
 		v = v ->next;
 	}
@@ -85,7 +85,7 @@ void SinglyLinked::deleteAt(int index){
 
 void SinglyLinked::deleteFront(){
 	SNode* old = get_head();
-	if (old==NULL) {
+	if (old==nullptr) {
 		return;
 	}
 	else{
