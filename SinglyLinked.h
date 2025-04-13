@@ -27,4 +27,5 @@ public:
 	void deleteBack();
 	void display();
 	void load(string file);
+	void search(int value);
 };
