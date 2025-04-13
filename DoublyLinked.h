@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 struct DNode
@@ -26,4 +27,5 @@ public:
 	void addBack(int value);
 	void deleteBack();
 	void display();
+	void load(string file);
 };
