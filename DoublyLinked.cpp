@@ -123,8 +123,15 @@ void DoublyLinked::display() {
 	DNode* v = header;
 	while (v != nullptr) {
 		cout << v->data << " -> ";
-		v = v->next;
-		
+		v = v->next;	
 	}
 	cout << "END";
+}
+
+void DoublyLinked::load(string file) {
+	ifstream myfile(file);
+	int a;
+	while (myfile >> a) {
+		addFront(a);
+	}
 }
