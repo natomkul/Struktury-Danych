@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class DynamicArray
@@ -19,4 +20,5 @@ public:
 	void addBack(int value);
 	void deleteBack();
 	void display();
+	void load(string file);
 };
