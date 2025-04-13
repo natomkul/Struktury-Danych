@@ -100,12 +100,10 @@ void SinglyLinked::deleteBack() {
 	deleteAt(size-1);
 }
 
-int main() {
-	SinglyLinked* lista = new SinglyLinked();
-	lista->addFront(6);
-	lista->addFront(8);
-	lista->addFront(7);
-	lista->addFront(9);
-	lista->deleteBack();
-	lista->display();
+void SinglyLinked::load(string file) {
+	ifstream myfile(file);
+	int a;
+	while (myfile >> a) {
+		addFront(a);
+	}
 }
