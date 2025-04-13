@@ -75,3 +75,12 @@ void DynamicArray::deleteFront() {
 void DynamicArray::deleteBack() {
 	deleteAt(size - 1);
 }
+
+//funkcja wczytująca plik
+void DynamicArray::load(string file) {
+	ifstream myfile(file);
+	int a;
+	while (myfile >> a) {
+		addFront(a);
+	}
+}
