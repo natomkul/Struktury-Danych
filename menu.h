@@ -293,6 +293,16 @@ void menuTest() {
                 Singly->~SinglyLinked();
             }
                   cout << "SL DeleteAt: " << time / 100 << endl; break;
+            case 7:for (int i = 0; i < 100; i++) {
+                SinglyLinked* Singly = new SinglyLinked();
+                Singly->load(file);
+                auto begin = high_resolution_clock::now();
+                Singly->search(index);
+                auto end = high_resolution_clock::now();
+                time += duration_cast<nanoseconds>(end - begin).count();
+                Singly->~SinglyLinked();
+            }
+                  cout << "SL Search: " << time / 100 << endl; break;
             }
         case 3:
             switch (operation) {
