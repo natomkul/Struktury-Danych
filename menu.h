@@ -336,7 +336,15 @@ void menuTest() {
                 Doubly->~DoublyLinked();
             }
                   cout << "DL AddAt: " << time / 100 << endl; break;
-            case 4:for (int i = 0; i < 100; i++)
+            case 4:for (int i = 0; i < 100; i++) {
+                DoublyLinked* Doubly = new DoublyLinked();
+                Doubly->load(file);
+                auto begin = high_resolution_clock::now();
+                Doubly->deleteFront();
+                auto end = high_resolution_clock::now();
+                time += duration_cast<nanoseconds>(end - begin).count();
+                Doubly->~DoublyLinked();
+            }
                   cout <<"DL DeleteFront: "<< time / 100 << endl; break;
             case 5:for (int i = 0; i < 100; i++) {
                 DoublyLinked* Doubly = new DoublyLinked();
