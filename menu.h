@@ -27,7 +27,7 @@ void menuMaking() {
             "3. Add value at the selected place in the list\n"
             "4. Remove the first value from the list\n"
             "5. Remove the last value from the list\n"
-            "6. Remove the selected value from the list\n"
+            "6. Remove the selected index from the list\n"
             "7. Search numbers of the given value in list\n";
         cin >> operation;
 
@@ -139,7 +139,7 @@ void menuTest() {
             "3. Add value at the selected place in the list\n"
             "4. Remove the first value from the list\n"
             "5. Remove the last value from the list\n"
-            "6. Remove the selected value from the list\n"
+            "6. Remove the selected index from the list\n"
             "7. Search numbers of the given value in list\n";
         cin >> operation;
 
