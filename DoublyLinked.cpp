@@ -1,10 +1,10 @@
 #include "DoublyLinked.h"
 
-DoublyLinked::DoublyLinked():header(nullptr), trailer(nullptr) {
+DoublyLinked::DoublyLinked() :header(nullptr), trailer(nullptr) {
 	size = 0;
 }
 
-DoublyLinked::~DoublyLinked(){
+DoublyLinked::~DoublyLinked() {
 	DNode* v;
 	while (header) {
 		v = header;
@@ -13,8 +13,8 @@ DoublyLinked::~DoublyLinked(){
 	}
 }
 
-void DoublyLinked::addAt(int index, int value){
-	if (index == size-1) {
+void DoublyLinked::addAt(int index, int value) {
+	if (index == size - 1) {
 		addBack(value);
 	}
 	if (index<0 || index>size - 1) {
@@ -22,7 +22,7 @@ void DoublyLinked::addAt(int index, int value){
 	}
 	else {
 		DNode* front = header;
-		for (int i = 0; i<index-1; i++) {
+		for (int i = 0; i < index - 1; i++) {
 			front = front->next;
 		}
 		DNode* v = new DNode;
@@ -42,14 +42,15 @@ void DoublyLinked::addFront(int value) {
 	DNode* v = new DNode;
 	v->data = value;
 	v->prev = nullptr;
-	if (size==0) {
+	if (size == 0) {
 		v->next = nullptr;
 		header = trailer = v;
 	}
 	else {
 		v->next = header;
+		header->prev = v;
+		header = v;
 	}
-	header = v;
 	size++;
 }
 
@@ -61,7 +62,7 @@ void DoublyLinked::addBack(int value) {
 		v->prev = nullptr;
 		header = trailer = v;
 	}
-	else{
+	else {
 		v->prev = trailer;
 		trailer->next = v;
 		trailer = v;
@@ -69,7 +70,7 @@ void DoublyLinked::addBack(int value) {
 	size++;
 }
 
-void DoublyLinked::deleteAt(int index){
+void DoublyLinked::deleteAt(int index) {
 	if (index == size - 1) {
 		deleteBack();
 		return;
@@ -83,7 +84,7 @@ void DoublyLinked::deleteAt(int index){
 	delete old;
 }
 
-void DoublyLinked::deleteFront(){
+void DoublyLinked::deleteFront() {
 	if (size == 0) {
 		return;
 	}
@@ -98,16 +99,16 @@ void DoublyLinked::deleteFront(){
 	header->prev = nullptr;
 	delete v;
 	size--;
-	
-	
+
+
 }
 
 void DoublyLinked::deleteBack() {
-	if (size = 0) {
+	if (size == 0) {
 		return;
 	}
-	if (size == 1) {
-		delete header;
+	if (trailer->prev == nullptr) {
+		delete trailer;
 		header = trailer = nullptr;
 		size = 0;
 		return;
@@ -116,14 +117,15 @@ void DoublyLinked::deleteBack() {
 	v->next = nullptr;
 	delete trailer;
 	trailer = v;
-	
+	size--;
 }
 
 void DoublyLinked::display() {
 	DNode* v = header;
 	while (v != nullptr) {
 		cout << v->data << " -> ";
-		v = v->next;	
+		v = v->next;
+
 	}
 	cout << "END";
 }
@@ -134,4 +136,17 @@ void DoublyLinked::load(string file) {
 	while (myfile >> a) {
 		addFront(a);
 	}
+}
+
+void DoublyLinked::search(int value) {
+	int count = 0;
+	DNode* v = new DNode;
+	v = header;
+	while (v != nullptr) {
+		if (v->data == value) {
+			count++;
+		}
+		v = v->next;
+	}
+	cout << value << " found in list " << count << " times" << endl;
 }
