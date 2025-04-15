@@ -111,25 +111,29 @@ void menuTest() {
     cin >> list;
 
     cout << "How many elements to test?\n"
-        "1.5000\n"
-        "2.8000\n"
-        "3.10000\n"
-        "4.16000\n"
-        "5.20000\n"
-        "6.40000\n"
-        "7.60000\n"
-        "8.100000\n";
+       "1.10000\n"
+       "2.20000\n"
+       "3.30000\n"
+       "4.40000\n"
+       "5.50000\n"
+       "6.60000\n"
+       "7.70000\n"
+       "8.80000\n";
+       "9.90000\n";
+       "10.100000\n";
     cin >> testSize;
 
     switch (testSize) {
-    case 1:file = "base5000.txt"; break;
-    case 2:file = "base8000.txt"; break;
-    case 3:file = "base10000.txt"; break;
-    case 4:file = "base16000.txt"; break;
-    case 5:file = "base20000.txt"; break;
-    case 6:file = "base40000.txt"; break;
-    case 7:file = "base60000.txt"; break;
-    case 8:file = "base100000.txt"; break;
+    case 1:file = "base10000.txt"; break;
+    case 2:file = "base20000.txt"; break;
+    case 3:file = "base30000.txt"; break;
+    case 4:file = "base40000.txt"; break;
+    case 5:file = "base50000.txt"; break;
+    case 6:file = "base60000.txt"; break;
+    case 7:file = "base70000.txt"; break;
+    case 8:file = "base80000.txt"; break;
+    case 9:file = "base90000.txt"; break;
+    case 10:file = "base100000.txt"; break;
     }
 
     while (true) {
