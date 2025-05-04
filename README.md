@@ -1,1 +1,1 @@
-- Miniproject 1 [DynamicArrayList, Singly Linked List, Doubly Linked List](https://github.com/natomkul/Struktury-Danych/tree/natomkul-miniprojekt-1)
+
