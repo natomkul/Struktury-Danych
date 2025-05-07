@@ -135,6 +135,7 @@ int Arr::return_size(){
 	return size;
 }
 
+//wyczyszczenie tablicy
 void Arr::usun(){
 	array.clear();
 }
