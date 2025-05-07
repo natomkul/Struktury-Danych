@@ -1,4 +1,4 @@
-﻿#include "List.h"
+#include "List.h"
 
 // konstruktor
 List::List():head(nullptr) {
@@ -93,4 +93,21 @@ void List::modify_key(int e, int p){
 //zwrócenie rozmiaru
 int List::return_size(){
 	return size;
+}
+
+// wczytywanie pliku tekstowego
+void List::load(string file){
+	fstream myfile;
+	myfile.open(file, ios::in);
+	string par;
+	while (getline(myfile, par)) {
+		istringstream ss(par);
+		int first, second;
+		char comma;
+
+		ss >> first >> comma >> second;
+		if (ss) {
+			insert(first, second);
+		}
+	}
 }
