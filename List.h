@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <utility>
+#include <string>
+#include <sstream>
 using namespace std;
 
 struct SNode
@@ -27,4 +29,5 @@ public:
 	pair<int, int> find_max();
 	void modify_key(int e, int p);
 	int return_size();
+	void load(string file);
 };
